@@ -1,0 +1,43 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+ext {
+    supportLibraryVersion = '22.2.0'
+    retrofitVersion = '2.0.0-beta2'
+    pinBoxVersion = '1.0.0'
+
+    dependencies = [
+            greendao: "de.greenrobot:greendao:2.0.0",
+            sotto: "com.squareup:otto:1.3.8",
+            guava:"com.google.guava:guava:18.+",
+            dagger:"com.google.dagger:dagger:2.0",
+            daggerCompiler: "com.google.dagger:dagger-compiler:2.0",
+            annotation : "org.glassfish:javax.annotation:10.0-b28",
+            fresco: "com.facebook.fresco:fresco:0.6.0+",
+            appCompat: "com.android.support:appcompat-v7:$supportLibraryVersion",
+            cardView: "com.android.support:cardview-v7:$supportLibraryVersion",
+            recyclerView: "com.android.support:recyclerview-v7:$supportLibraryVersion",
+            retrofit: "com.squareup.retrofit:retrofit:$retrofitVersion",
+            retrofitConverterGson: "com.squareup.retrofit:converter-gson:$retrofitVersion",
+            picasso: 'com.squareup.picasso:picasso:2.5.2',
+            rxjava:'io.reactivex:rxjava:1.0.+',
+            rxandroid:'io.reactivex:rxandroid:0.23.+',
+            rxadapter:"com.squareup.retrofit:adapter-rxjava:2.0.0-beta2",
+//            retrofitConverter:"com.squareup.retrofit:converter-simplexml:2.0.0-beta2",
+            //属性动画库
+            daimajiaEasingAnim:"com.daimajia.easing:library:1.0.1@aar",
+            daimajiaAndroidAnim:"com.daimajia.androidanimations:library:1.1.3@aar",
+            googleGson: 'com.google.code.gson:gson:2.2.4',
+            //友盟统计
+            umengAnalytics:"com.umeng.analytics:analytics:latest.integration",
+            releaseleakcanary:"com.squareup.leakcanary:leakcanary-android-no-op:1.3.1",
+            debugleakcanary:"com.squareup.leakcanary:leakcanary-android:1.3.1",
+
+
+            materialishProgress : "com.pnikosis:materialish-progress:1.5",
+            //图片获取（本地选图，拍照）
+            pictureChoose:"net.soulwolf.image:pictureChoose:1.0.0",
+            //版本更新下载动画
+            arrowDownload:"com.github.fenjuly:ArrowDownloadButton:9e15b85e8a",
+            pinBox:"com.github.davidpizarro:pinview:$pinBoxVersion",
+
+    ]
+}

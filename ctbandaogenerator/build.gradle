@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin:'application'
+
+group = 'de.greenrobot'
+version = '1.4.0-SNAPSHOT'
+sourceCompatibility = 1.6
+mainClassName = "com.ctban.CTBanDaoGenerator"
+
+dependencies {
+    compile'de.greenrobot:DaoGenerator:1.3.0'
+//    compile project(':lib')
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+            srcDir 'src-gen'
+        }
+    }
+}
+
+artifacts {
+    archives jar
+}
+
+repositories {
+    mavenCentral()
+}
