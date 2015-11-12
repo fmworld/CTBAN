@@ -24,12 +24,11 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         findViewById(R.id.get).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Observable<WeatherInfo> weainfo = CTBanServer.instance().getUserService().getWeather("101010100.html");
-                weainfo.subscribeOn(Schedulers.io())
+                Observable<WeatherInfo> weaInfo = CTBanServer.instance().getUserService().getWeather("101010100.html");
+                weaInfo.subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(new Subscriber<WeatherInfo>() {
                             @Override
@@ -39,7 +38,7 @@ public class MainActivity extends ActionBarActivity {
 
                             @Override
                             public final void onError(Throwable e) {
-                                Log.e("GithubDemo", e.getMessage());
+//                                Log.e("GithubDemo", e.getMessage());
                             }
 
                             @Override
