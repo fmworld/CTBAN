@@ -1,10 +1,10 @@
 package com.ctban.ctblib;
 
 import android.app.Application;
-import com.ctban.ctblib.models.component.DaggerStateComponent;
-import com.ctban.ctblib.models.component.StateComponent;
-import com.ctban.ctblib.state.ConfigState;
-import com.squareup.leakcanary.LeakCanary;
+
+import com.ctban.ctblib.controller.MainController;
+import com.ctban.ctblib.models.component.DaggerMainControllerComponent;
+import com.ctban.ctblib.models.component.MainControllerComponent;
 
 import javax.inject.Inject;
 
@@ -20,7 +20,7 @@ public class CTBanApplication extends Application {
     }
 
     @Inject
-    ConfigState mConfigState;
+    MainController mainController;
 
     @Override
     public void onCreate() {
@@ -33,10 +33,12 @@ public class CTBanApplication extends Application {
      * 初始化应用开发堆栈
      */
     private void initConfig() {
+        MainControllerComponent mainControllerComponent = DaggerMainControllerComponent.create();
+        mainControllerComponent.inject(this);
 
-        StateComponent stateComponent = DaggerStateComponent.create();
-        stateComponent.inject(this);
-
+//        Log.v("dagger", "initConfig() mConfigState " + mConfigState);
+//        Log.v("dagger", "initConfig() mUserController " + mUserController);
+//        Log.v("dagger", "initConfig() mUserState " + mUserState);
 
         initLeakCanary();
     }
@@ -46,9 +48,12 @@ public class CTBanApplication extends Application {
      * 集成内存优化工具leakcanary
      */
     private void initLeakCanary() {
-        if (mConfigState.isDebugModel()) {
-            LeakCanary.install(this);
-        }
+//        if (mConfigState.isDebugModel()) {
+//            LeakCanary.install(this);
+//        }
     }
 
+    public MainController getMainController() {
+        return mainController;
+    }
 }

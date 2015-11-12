@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'com.android.databinding'
 
 android {
     compileSdkVersion 21
@@ -24,6 +26,8 @@ dependencies {
     Map<String, String> dependencies = rootProject.ext.dependencies;
     testCompile 'junit:junit:4.12'
     compile project(':ctblib')
-//    compile dependencies.appCompat
+    compile dependencies.dagger
+    apt dependencies.daggerCompiler
+    provided dependencies.annotation
 
 }

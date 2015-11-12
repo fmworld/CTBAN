@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.view.View"/>
+        <variable name="weather" type="com.ctban.ctblib.models.dao.Weather"/>
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{weather.city+"  temp "+weather.getTemp()}'
+            />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:visibility='@{!"aaa".equals(user.name)?View.VISIBLE:View.INVISIBLE}'-->
+            <!--android:text="@{user.password}"-->
+            <!--/>-->
+        <Button
+            android:id="@+id/getWeather"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</layout>

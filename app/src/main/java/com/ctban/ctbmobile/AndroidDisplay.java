@@ -16,4 +16,8 @@ public class AndroidDisplay extends Display {
     public AndroidDisplay(Activity activity){
         mActivity = activity;
     }
+
+    public void initContext(Activity activity){
+        mActivity = activity;
+    }
 }
