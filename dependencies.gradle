@@ -32,6 +32,9 @@ ext {
             debugleakcanary:"com.squareup.leakcanary:leakcanary-android:1.3.1",
 
 
+            //第三方UI引用
+            materialrefeshlayout:'com.cjj.materialrefeshlayout:library:1.3.0',
+
             materialishProgress : "com.pnikosis:materialish-progress:1.5",
             //图片获取（本地选图，拍照）
             pictureChoose:"net.soulwolf.image:pictureChoose:1.0.0",

@@ -30,4 +30,9 @@ dependencies {
     apt dependencies.daggerCompiler
     provided dependencies.annotation
 
+    //上下拉动刷新列表
+    compile dependencies.materialrefeshlayout
+    //recyclerView控件引用
+    compile dependencies.recyclerView
+
 }
