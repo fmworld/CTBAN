@@ -9,15 +9,19 @@ import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.ctban.ctblib.controller.UserController;
 import com.ctban.ctblib.ctbretro.bean.WeatherInfo;
+import com.ctban.ctblib.models.dao.Weather;
 import com.ctban.ctbmobile.databinding.ActivityLoginBinding;
 import com.ctban.ctbmobile.databinding.ActivityMainBinding;
 import com.ctban.ctbmobile.ui.adapter.TestRecyclerAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends CTBActivity implements UserController.LoginUi {
     UserController.UserLoginCallback mUserLoginCallback;
     ActivityLoginBinding loginTop;
     ActivityMainBinding testContent;
-    TestRecyclerAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,13 +35,8 @@ public class MainActivity extends CTBActivity implements UserController.LoginUi 
         });
         loginTop.layoutParent.addView(testContent.getRoot());
 
-        LinearLayoutManager manager = new LinearLayoutManager(this);
-        manager.setOrientation(LinearLayoutManager.VERTICAL);
-        loginTop.listRecycler.setLayoutManager(manager);
 
-        adapter = new TestRecyclerAdapter();
 
-        loginTop.listRecycler.setAdapter(adapter);
         loginTop.refreshLayout.setLoadMore(true);
         loginTop.refreshLayout.setMaterialRefreshListener(new MaterialRefreshListener() {
             @Override
@@ -47,8 +46,44 @@ public class MainActivity extends CTBActivity implements UserController.LoginUi 
 
             public void onRefreshLoadMore(MaterialRefreshLayout materialRefreshLayout){
                 loginTop.refreshLayout.finishRefreshLoadMore();
-            };
+            }
         });
+
+        List<Weather> weathers = new ArrayList<>();
+        Weather weather = new Weather();
+        weather.setCity("shen zhen");
+        weather.setTemp("100");
+        weathers.add(weather);
+
+        weather = new Weather();
+        weather.setCity("beijing");
+        weather.setTemp("100");
+        weathers.add(weather);
+
+        weather = new Weather();
+        weather.setCity("shanghai");
+        weather.setTemp("100");
+        weathers.add(weather);
+
+        weather = new Weather();
+        weather.setCity("guangzhou");
+        weather.setTemp("100");
+        weathers.add(weather);
+
+        weather = new Weather();
+        weather.setCity("hangzhou");
+        weather.setTemp("100");
+        weathers.add(weather);
+
+        weather = new Weather();
+        weather.setCity("suzhou");
+        weather.setTemp("100");
+        weathers.add(weather);
+
+        TestRecyclerAdapter recyclerAdapter = new TestRecyclerAdapter();
+        recyclerAdapter.setData(weathers);
+        loginTop.refreshLayout.setAdapter(recyclerAdapter);
+
     }
 
     @Override

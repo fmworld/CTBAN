@@ -31,16 +31,11 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content" />
 
-        <com.cjj.MaterialRefreshLayout
+        <com.ctban.ctbmobile.ui.widget.RefreshRecycleLayout
             android:id="@+id/refreshLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/list_recycler"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-        </com.cjj.MaterialRefreshLayout>
+        </com.ctban.ctbmobile.ui.widget.RefreshRecycleLayout>
     </LinearLayout>
 
 </layout>
