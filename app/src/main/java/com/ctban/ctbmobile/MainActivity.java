@@ -84,6 +84,9 @@ public class MainActivity extends CTBActivity implements UserController.LoginUi 
         recyclerAdapter.setData(weathers);
         loginTop.refreshLayout.setAdapter(recyclerAdapter);
 
+
+        //hhhkdlklfs
+
     }
 
     @Override
