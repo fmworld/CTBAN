@@ -85,7 +85,6 @@ public class MainActivity extends CTBActivity implements UserController.LoginUi 
         loginTop.refreshLayout.setAdapter(recyclerAdapter);
 
 
-        //hhhkdlklfs
 
     }
 
