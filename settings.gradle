@@ -1,1 +1,1 @@
-include ':app', ':ctblib', ':ctbandaogenerator'
+include ':app', ':ctblib', ':ctbandaogenerator', ':easemob'

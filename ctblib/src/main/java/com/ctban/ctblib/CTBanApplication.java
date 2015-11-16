@@ -36,10 +36,6 @@ public class CTBanApplication extends Application {
         MainControllerComponent mainControllerComponent = DaggerMainControllerComponent.create();
         mainControllerComponent.inject(this);
 
-//        Log.v("dagger", "initConfig() mConfigState " + mConfigState);
-//        Log.v("dagger", "initConfig() mUserController " + mUserController);
-//        Log.v("dagger", "initConfig() mUserState " + mUserState);
-
         initLeakCanary();
     }
 

@@ -1,6 +1,6 @@
 package com.ctban.ctbmobile.models.component;
 
-import com.ctban.ctbmobile.CTBActivity;
+import com.ctban.ctbmobile.CTBMVPActivity;
 import com.ctban.ctbmobile.models.provider.DisplayProvider;
 
 import javax.inject.Singleton;
@@ -13,5 +13,5 @@ import dagger.Component;
 @Component(modules = {DisplayProvider.class})
 @Singleton
 public interface DisplayComponent {
-    void inject(CTBActivity activity);
+    void inject(CTBMVPActivity activity);
 }

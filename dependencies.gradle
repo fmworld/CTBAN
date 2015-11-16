@@ -41,6 +41,6 @@ ext {
             //版本更新下载动画
             arrowDownload:"com.github.fenjuly:ArrowDownloadButton:9e15b85e8a",
             pinBox:"com.github.davidpizarro:pinview:$pinBoxVersion",
-
+            rxbinding:"com.jakewharton.rxbinding:rxbinding:0.3.0"
     ]
 }

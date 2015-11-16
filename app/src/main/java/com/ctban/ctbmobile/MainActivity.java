@@ -10,8 +10,7 @@ import com.ctban.ctblib.controller.UserController;
 import com.ctban.ctblib.ctbretro.bean.WeatherInfo;
 import com.ctban.ctblib.models.dao.Weather;
 import com.ctban.ctblib.models.uimodels.MainModel;
-import com.ctban.ctbmobile.databinding.ActivityLoginBinding;
-import com.ctban.ctbmobile.databinding.ActivityMainBinding;
+import com.ctban.ctbmobile.databinding.FragmentLoginBinding;
 import com.ctban.ctbmobile.ui.adapter.TestRecyclerAdapter;
 
 import java.util.ArrayList;
@@ -21,45 +20,32 @@ import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 
-public class MainActivity extends CTBActivity implements UserController.LoginUi {
-    UserController.UserLoginCallback mUserLoginCallback;
-    ActivityLoginBinding loginTop;
-    ActivityMainBinding testContent;
+public class MainActivity extends CTBMVPActivity implements UserController.LoginUi {
+    UserController.MemberLoginCallback mUserLoginCallback;
+    FragmentLoginBinding loginTop;
+//    ActivityMainBinding testContent;
     MainModel mainModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        loginTop = DataBindingUtil.setContentView(this, R.layout.activity_login);
-        testContent = DataBindingUtil.bind(View.inflate(this, R.layout.activity_main, null));
+        loginTop = DataBindingUtil.setContentView(this, R.layout.fragment_login);
+//        testContent = DataBindingUtil.bind(View.inflate(this, R.layout.activity_main, null));
         final String[] arr = {"aaa","bbb","ccc"};
-        loginTop.getWeather.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                mUserLoginCallback.login("101010100.html");
-//                mainModel.setTemp("999%");
-//                loginTop.getWeather().setTemp1("999%");
-//                loginTop.getWeather();
-//                loginTop.setWeather(loginTop.getWeather());
-                Observable.from(arr).observeOn(AndroidSchedulers.mainThread())
+//        loginTop.getWeather.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Observable.from(arr).observeOn(AndroidSchedulers.mainThread())
+//                        .forEach(new Action1<String>() {
+//
+//                            @Override
+//                            public void call(String s) {
+//                                mainModel.setTemp(s);
+//                            }
+//                        });
+//            }
+//        });
 
-                        .forEach(new Action1<String>()
-                {
-
-                    @Override
-                    public void call(String s) {
-//                        loginTop.getWeather().setTemp(s);
-//                        loginTop.getWeather().notifyChange();
-//                        loginTop.textId.setText(s);
-
-//                        mainModel.setTemp(s);
-                        mainModel.setTemp(s);
-//                        mainModel.notifyChange();
-                    }
-                });
-            }
-        });
-
-        loginTop.layoutParent.addView(testContent.getRoot());
+//        loginTop.layoutParent.addView(testContent.getRoot());
 
 
 
@@ -108,7 +94,7 @@ public class MainActivity extends CTBActivity implements UserController.LoginUi 
 
         TestRecyclerAdapter recyclerAdapter = new TestRecyclerAdapter();
         recyclerAdapter.setData(weathers);
-        loginTop.refreshLayout.setAdapter(recyclerAdapter);
+//        loginTop.refreshLayout.setAdapter(recyclerAdapter);
 
         mainModel = new MainModel();
         mainModel.setCity("beijing");
@@ -131,18 +117,23 @@ public class MainActivity extends CTBActivity implements UserController.LoginUi 
     }
 
 
-    @Override
-    public void userLogined(WeatherInfo weatherInfo) {
+//    @Override
+//    public void userLogined(WeatherInfo weatherInfo) {
 //        loginTop.setWeather(weatherInfo.weatherinfo);
-        testContent.setWeather(weatherInfo.weatherinfo);
-    }
+//        testContent.setWeather(weatherInfo.weatherinfo);
+//    }
 
     @Override
-    public void setCallbacks(UserController.UserUiCallback callbacks) {
-        mUserLoginCallback = (UserController.UserLoginCallback) callbacks;
+    public void setCallbacks(UserController.MemberUiCallback callbacks) {
+        mUserLoginCallback = (UserController.MemberLoginCallback) callbacks;
     }
 
     UserController getController() {
         return getMainController().getUserController();
+    }
+
+    @Override
+    public void userLogined(String userName, String userPwd) {
+
     }
 }
