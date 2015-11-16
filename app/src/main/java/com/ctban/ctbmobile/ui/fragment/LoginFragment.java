@@ -10,6 +10,7 @@ import com.ctban.ctblib.controller.UserController;
 import com.ctban.ctbmobile.BaseCTBFragment;
 import com.ctban.ctbmobile.R;
 import com.ctban.ctbmobile.databinding.FragmentLoginBinding;
+import com.easemob.easeui.EaseConstant;
 
 /**
  * 会员登录界面
@@ -43,6 +44,13 @@ public class LoginFragment extends BaseCTBFragment implements UserController.Log
                 getDisplay().showMemCreatePage();
             }
         });
+        loginBinding.messageList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        loginBinding.messageList.init("qqqq", EaseConstant.CHATTYPE_SINGLE,null);
         return fragView;
     }
 
@@ -70,6 +78,8 @@ public class LoginFragment extends BaseCTBFragment implements UserController.Log
 
     @Override
     public void userLogined(String userName, String userPwd) {
-        getDisplay().showSingleEaseChat(userName);
+//        getDisplay().showSingleEaseChat("qqqq");
+//        getDisplay().showEaseConversationListFragment();
+        getDisplay().showEaseContactListFragment();
     }
 }

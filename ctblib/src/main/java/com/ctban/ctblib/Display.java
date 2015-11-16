@@ -7,5 +7,7 @@ public interface Display {
     void showMemLoginPage();
     void showMemCreatePage();
     void showSingleEaseChat(String easename);
-
+    void showEaseChatList(String easename);
+    void showEaseConversationListFragment();
+    void showEaseContactListFragment();
 }

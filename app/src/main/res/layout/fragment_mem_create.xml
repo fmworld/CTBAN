@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:easemob="http://schemas.android.com/apk/res-auto">
 
     <data>
         <import type="android.view.View" />
@@ -25,6 +26,15 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="@string/registe"
+            />
+        <com.easemob.easeui.widget.EaseConversationList
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:cacheColorHint="#00000000"
+            android:divider="@null"
+            easemob:cvsListPrimaryTextSize="16sp"
             />
     </LinearLayout>
 

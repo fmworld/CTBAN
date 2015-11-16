@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:easemob="http://schemas.android.com/apk/res-auto"
+    >
     <data>
         <import type="android.view.View" />
         <variable
@@ -8,43 +10,71 @@
     </data>
 
     <LinearLayout
-        android:id="@+id/layout_parent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <EditText
-            android:id="@+id/loginName"
-            android:layout_width="100dp"
-            android:layout_height="50dp" />
-
-        <EditText
-            android:id="@+id/loginPassword"
-            android:layout_width="100dp"
-            android:layout_height="50dp" />
-
-        <TextView
-            android:id="@+id/text_id"
+        android:orientation="horizontal"
+        >
+        <LinearLayout
+            android:id="@+id/layout_parent"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-             />
-        <Button
-            android:id="@+id/login"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="@string/login"
-            />
-        <Button
-            android:id="@+id/toCreate"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="@string/registe"
-            />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <com.ctban.ctbmobile.ui.widget.RefreshRecycleLayout
-            android:id="@+id/refreshLayout"
+            <EditText
+                android:id="@+id/loginName"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
+
+            <EditText
+                android:id="@+id/loginPassword"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
+
+            <TextView
+                android:id="@+id/text_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <Button
+                android:id="@+id/login"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                />
+            <Button
+                android:id="@+id/toCreate"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/registe"
+                />
+
+            <Button
+                android:id="@+id/chatFragment"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/chatFragment"
+                />
+
+            <Button
+                android:id="@+id/chatlist"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/chatlist"
+                />
+
+            <com.ctban.ctbmobile.ui.widget.RefreshRecycleLayout
+                android:id="@+id/refreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <com.easemob.easeui.widget.EaseChatMessageList
+            android:id="@+id/message_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent"
+            easemob:msgListShowUserNick="false"
+            />
     </LinearLayout>
+
 
 </layout>

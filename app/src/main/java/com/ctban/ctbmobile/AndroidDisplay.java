@@ -8,8 +8,15 @@ import android.support.v4.app.FragmentActivity;
 import com.ctban.ctblib.Display;
 import com.ctban.ctbmobile.ui.fragment.LoginFragment;
 import com.ctban.ctbmobile.ui.fragment.MemCreateFragment;
+import com.easemob.chat.EMContactManager;
 import com.easemob.easeui.EaseConstant;
 import com.easemob.easeui.ui.EaseChatFragment;
+import com.easemob.easeui.ui.EaseContactListFragment;
+import com.easemob.easeui.ui.EaseConversationListFragment;
+
+import rx.Observable;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by zhoufeng'an on 2015/11/11.
@@ -54,5 +61,38 @@ public class AndroidDisplay implements Display {
         mActivity.getSupportFragmentManager().beginTransaction()
                 .replace(R.id.login_fragement, fragment, fragment.getClass().getSimpleName())
                 .commit();
+    }
+
+    @Override
+    public void showEaseChatList(String easename) {
+
+    }
+
+    @Override
+    public void showEaseConversationListFragment() {
+        EaseConversationListFragment
+                fragment = new EaseConversationListFragment();
+
+        mActivity.getSupportFragmentManager().beginTransaction()
+                .replace(R.id.login_fragement, fragment, fragment.getClass().getSimpleName())
+                .commit();
+
+    }
+
+    @Override
+    public void showEaseContactListFragment() {
+
+        EaseContactListFragment
+        fragment = new EaseContactListFragment();
+        mActivity.getSupportFragmentManager().beginTransaction()
+                .replace(R.id.login_fragement, fragment, fragment.getClass().getSimpleName())
+                .commit();
+        Observable.just("").subscribeOn(Schedulers.io())
+                .subscribe(new Action1<String>() {
+                    @Override
+                    public void call(String s) {
+//                        EMContactManager.getInstance().getContactUserNames()
+                    }
+                });
     }
 }
