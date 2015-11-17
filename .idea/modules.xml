@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CTBAN.iml" filepath="$PROJECT_DIR$/CTBAN.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CTBAN.iml" filepath="$PROJECT_DIR$/CTBAN.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/ctbandaogenerator/ctbandaogenerator.iml" filepath="$PROJECT_DIR$/ctbandaogenerator/ctbandaogenerator.iml" />
       <module fileurl="file://$PROJECT_DIR$/ctblib/ctblib.iml" filepath="$PROJECT_DIR$/ctblib/ctblib.iml" />

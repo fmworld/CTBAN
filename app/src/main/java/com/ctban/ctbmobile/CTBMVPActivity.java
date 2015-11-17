@@ -12,6 +12,7 @@ import com.ctban.ctblib.Display;
 import com.ctban.ctblib.controller.MainController;
 import com.ctban.ctbmobile.models.component.DaggerDisplayComponent;
 import com.ctban.ctbmobile.models.component.DisplayComponent;
+import com.umeng.analytics.MobclickAgent;
 
 import javax.inject.Inject;
 
@@ -62,7 +63,7 @@ public class CTBMVPActivity extends FragmentActivity {
         super.onResume();
         mainController.attachDisplay(mAndroidDisplay);
         mainController.init();
-//        MobclickAgent.onResume(this);
+        MobclickAgent.onResume(this);
     }
 
     @Override
@@ -70,7 +71,7 @@ public class CTBMVPActivity extends FragmentActivity {
         mainController.suspend();
         mainController.detachDisplay(mAndroidDisplay);
         super.onPause();
-//        MobclickAgent.onPause(this);
+        MobclickAgent.onPause(this);
     }
 
     @Override

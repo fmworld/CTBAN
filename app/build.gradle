@@ -30,6 +30,7 @@ dependencies {
     compile dependencies.dagger
     apt dependencies.daggerCompiler
     provided dependencies.annotation
+    compile dependencies.umengAnalytics
 
     //上下拉动刷新列表
     compile dependencies.materialrefeshlayout

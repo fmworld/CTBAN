@@ -50,6 +50,10 @@
         <!-- 声明sdk所需的service SDK核心功能-->
         <service android:name="com.easemob.chat.EMChatService" />
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  easemob  end  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+        <!-- ++++++++++++++++++++++++++++++++  umeng  start  ++++++++++++++++++++++++++++++++ -->
+        <meta-data android:value="YOUR_APP_KEY" android:name="UMENG_APPKEY"></meta-data>
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  umeng  end  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     </application>
 
 </manifest>
