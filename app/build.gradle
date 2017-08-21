@@ -26,19 +26,19 @@ android {
 }
 
 dependencies {
-    Map<String, String> dependencies = rootProject.ext.dependencies;
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile project(':ctblib')
-    compile dependencies.dagger
-    apt dependencies.daggerCompiler
-    provided dependencies.annotation
-    compile dependencies.umengAnalytics
+    //Map<String, String> dependencies = rootProject.ext.dependencies;
+    //compile fileTree(dir: 'libs', include: ['*.jar'])
+    //testCompile 'junit:junit:4.12'
+    //compile project(':ctblib')
+    //compile dependencies.dagger
+    //apt dependencies.daggerCompiler
+    //provided dependencies.annotation
+    //compile dependencies.umengAnalytics
 
     //上下拉动刷新列表
-    compile dependencies.materialrefeshlayout
+    //compile dependencies.materialrefeshlayout
     //recyclerView控件引用
-    compile dependencies.recyclerView
+    //compile dependencies.recyclerView
     
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.google.android.gms:play-services-maps:10.2.6'
