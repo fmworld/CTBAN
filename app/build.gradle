@@ -47,14 +47,14 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:25.3.1'
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.google.maps.android:android-maps-utils:0.5'
-    compile(name: 'leakcanary-analyzer-1.4-beta2', ext: 'aar')
-    compile(name: 'leakcanary-android-1.4-beta2', ext: 'aar')
-    compile(name: 'leakcanary-watcher-1.4-beta2', ext: 'aar')
-    compile(name: 'mobilehelp-1.0.3', ext: 'aar')
-    compile(name: 'pull-to-refresh-1.0.4', ext: 'aar')
-    compile(name: 'report-0.8.9', ext: 'aar')
-    compile(name: 'rxandroid-1.2.1', ext: 'aar')
-    compile(name: 'autel-amap-utils', ext: 'aar')
+    //compile(name: 'leakcanary-analyzer-1.4-beta2', ext: 'aar')
+    //compile(name: 'leakcanary-android-1.4-beta2', ext: 'aar')
+    //compile(name: 'leakcanary-watcher-1.4-beta2', ext: 'aar')
+    //compile(name: 'mobilehelp-1.0.3', ext: 'aar')
+    //compile(name: 'pull-to-refresh-1.0.4', ext: 'aar')
+    //compile(name: 'report-0.8.9', ext: 'aar')
+    //compile(name: 'rxandroid-1.2.1', ext: 'aar')
+    //compile(name: 'autel-amap-utils', ext: 'aar')
     
     testCompile 'org.robolectric:robolectric:3.3.2'
     testCompile 'org.robolectric:shadows-support-v4:3.0'
